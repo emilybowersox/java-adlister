@@ -13,6 +13,15 @@ public class CounterServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+
+        try {
+            if (req.getParameter("reset").equals("1")) {
+                counter = 0;
+            }
+            } catch(NullPointerException ex){
+                ex.printStackTrace();
+            }
+
         counter++;
         res.setContentType("text/html");
         PrintWriter out = res.getWriter();
@@ -20,4 +29,7 @@ public class CounterServlet extends HttpServlet {
 
             }
         }
+
+//        to reset to one you would type: http://localhost:8080/count?reset=1
+// count is always first- the param goes after the "?"
 
