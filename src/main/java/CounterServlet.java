@@ -30,6 +30,10 @@ public class CounterServlet extends HttpServlet {
             }
         }
 
-//        to reset to one you would type: http://localhost:8080/count?reset=1
+// to reset to one you would type: http://localhost:8080/count?reset=1
 // count is always first- the param goes after the "?"
+// "?" (ampersand) is the just the seperator between the url and the query parameters
+// "?" is the token to let you know that the query parameter string has begun
+// and you can put in more than one query parameter- you can list each query
+// parameter after another ampersand seperator
 
